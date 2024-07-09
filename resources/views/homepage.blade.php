@@ -40,8 +40,8 @@
                     <td>{{ $train['arrive_station'] }}</td>
                     <td>{{ $train['departure_hour'] }}</td>
                     <td>{{ $train['arrive_hour'] }}</td>
-                    <td>{{ $train['departure_date'] }}</td>
-                    <td>{{ $train['arrive_date'] }}</td>
+                    <td>{{\Carbon\Carbon::parse($train['departure_date'])->format('d-m-Y')}}</td>
+                    <td>{{ \Carbon\Carbon::parse($train['arrive_date'])->format('d-m-Y') }}</td>
                     <td>{{ $train['carriages_num'] }}</td>
                     <td>{{ $train['in_time'] }}</td>
                     <td>{{ $train['deleted'] }}</td>
