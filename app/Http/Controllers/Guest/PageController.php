@@ -11,10 +11,10 @@ class PageController extends Controller
 {
     public function index()
     {
-        // $trains = Train::all();
+        $trains = Train::all();
 
-        $today = Carbon::today()->toDateString();
-        $trains = Train::where('departure_date', $today)->get();
+        // $today = Carbon::today()->toDateString();
+        // $trains = Train::where('departure_date', $today)->get();
 
         return view('homepage', compact('trains'));
     }

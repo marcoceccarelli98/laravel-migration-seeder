@@ -20,11 +20,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Train ID</th>
+                    <th scope="col">Train CODE</th>
                     <th scope="col">Departure Station</th>
                     <th scope="col">Arrive Station</th>
-                    <th scope="col">Departure Hour</th>
-                    <th scope="col">Arrive Hour</th>
                     <th scope="col">Departure Date</th>
                     <th scope="col">Arrive Date</th>
                     <th scope="col">Carriage Number</th>
@@ -35,13 +33,11 @@
             <tbody>
                 @foreach ($trains as $train)
                 <tr>
-                    <th scope="row">{{ $train['train_id'] }}</th>
+                    <th class="text-uppercase" scope="row">{{ $train['train_code'] }}</th>
                     <td>{{ $train['departure_station'] }}</td>
                     <td>{{ $train['arrive_station'] }}</td>
-                    <td>{{ $train['departure_hour'] }}</td>
-                    <td>{{ $train['arrive_hour'] }}</td>
-                    <td>{{\Carbon\Carbon::parse($train['departure_date'])->format('d-m-Y')}}</td>
-                    <td>{{ \Carbon\Carbon::parse($train['arrive_date'])->format('d-m-Y') }}</td>
+                    <td>{{ $train['departure_dateTime'] }}</td>
+                    <td>{{ $train['arrive_dateTime'] }}</td>
                     <td>{{ $train['carriages_num'] }}</td>
                     <td>{{ $train['in_time'] }}</td>
                     <td>{{ $train['deleted'] }}</td>
